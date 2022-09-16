@@ -26,6 +26,7 @@
           attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 
+        /*
         // Füllbereich für Sechsecke festlegen
       	const boundForHex = [
     		  [48.15, 11.43],
@@ -45,7 +46,8 @@
     		const partition = L.partition(hexOption);
     		partition.setData(boundForHex);
     		const layerGroup = partition.addTo(map)
-
+        */
+      
         // Dekanate einfügen
         for (let data of Object.values(dekanate)) {
         	L.geoJSON(data["features"]).addTo(map).bindPopup(data["features"][0]["properties"]["name"]);
