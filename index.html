@@ -22,17 +22,22 @@
         
         // Karte einbinden
         var map = L.map('map').setView([48.1, 11.5], 11);
-        var CartoDB_VoyagerLabelsUnder = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}{r}.png', {
+        var CartoDB_Voyager = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
           attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
 	        subdomains: 'abcd',
 	        maxZoom: 20
         });
-        CartoDB_VoyagerLabelsUnder.addTo(map);
+        CartoDB_Voyager.addTo(map);
       
-        //L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        //  attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-        //}).addTo(map);
-
+	var icon_gockel = L.icon({
+    	  iconUrl: 'https://www2.elkb.de/apps/bundles/elkbgis/images/marker-rot-rooster.png',
+    	  iconSize: [55, 77],
+    	  iconAnchor: [18, 35],
+   	  popupAnchor: [-3, -76],
+	});
+	
+	L.marker([48.09213, 11.48387], {icon: icon_gockel}).addTo(map);
+	    
         /*
         // Füllbereich für Sechsecke festlegen
       	const boundForHex = [
